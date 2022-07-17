@@ -1,0 +1,191 @@
+\documentclass[11pt,oneside,a4paper,titlepage]{article}
+
+\usepackage[most]{tcolorbox} \usepackage{geometry}
+\geometry{
+  a4paper,
+  top=0.0pt,
+  bottom=0.0pt,
+  left=3em,
+  right=3em,
+}
+
+% \usepackage[clean]{svg}
+\usepackage[T1]{fontenc}
+\usepackage{soul, fontspec, color, fontawesome5, titlesec, multicol, tikz, xcolor, hyperref}
+\usepackage[inkscape]{svg}
+% \setmainfont[Ligatures=TeX]{Open Sans}
+% \setsansfont[Ligatures=TeX]{Open Sans}
+\setmainfont[Ligatures=TeX]{Rubik} \setsansfont[Ligatures=TeX]{Rubik}
+\setlength{\columnseprule}{2pt}
+\setul{}{2pt}
+
+\definecolor{TitleBack}{HTML}{282828}
+\definecolor{TitleFore}{HTML}{EBDBB2}
+\definecolor{White}{HTML}{EBDBB2}
+\definecolor{Black}{HTML}{282828}
+\definecolor{Blue}{HTML}{458588}
+\definecolor{Red}{HTML}{cc241d}
+\definecolor{Yellow}{HTML}{fabd2f}
+\def\columnseprulecolor{\color{Black}}
+
+% \hypersetup{
+%   colorlinks=true,
+%   Urlcolor=
+% }
+% \urlstyle{same}
+
+\pagecolor{TitleFore}
+
+\newcommand\skills[1]{
+  \begin{tikzpicture}
+    \foreach [count=\i] \x/\y in {#1}{
+        \draw[fill=Red,Black] (0,\i+0.5) rectangle (6,\i+0.3);
+        \draw[fill=Blue,Blue] (0,\i+0.5) rectangle (\y,\i+0.3);
+        \draw[fill=White,White] (0,\i+0.11) rectangle (6,\i+0.3);
+        \node[above left] at (0,\i+0.4) {\x};
+    }
+  \end{tikzpicture}
+}
+
+\newcommand{\sect}[2]{
+  \begin{center}\color{Black}
+    \rule{10em}{2pt} \\
+    \vspace{0.6em}
+    {\sffamily\Large\textbf{#1}}\\
+    \rule{10em}{2pt} \\
+    \vspace{0.5em}
+    #2
+  \end{center}
+}
+
+\newcommand{\sectitem}[2]{
+  \begin{minipage}[c]{0.8\linewidth}
+    \begin{center}
+      {\textbf{#1}} \\
+      \vspace{3pt}
+      #2 \\
+      \vspace{1em}
+    \end{center}
+  \end{minipage}
+}
+\newcommand{\infoitem}[2]{
+  \begin{minipage}[c][4em][t]{9.2em}
+    \vspace{0.2em}
+    \begin{center}
+      {\Large{\faIcon{#1}}\\\vspace{0.1em}\small{#2}}
+    \end{center}
+  \end{minipage}
+}
+
+\newcommand\dunderline[3][-1pt]{{%
+  \sbox0{#3}%
+  \ooalign{\copy0\cr\rule[\dimexpr#1-#2\relax]{\wd0}{#2}}}}
+
+\newcommand{\link}[3]{
+  \sectitem{\href{#1}{\dunderline[-2.5pt]{1.5pt}{#2\textsuperscript{\faIcon{link}}}}}{#3}
+}
+
+\newcommand{\logo}[1]{
+  \begin{minipage}[c][1em][c]{1em}
+    \begin{center}
+      #1
+    \end{center}
+  \end{minipage}
+  \hspace{1em}
+}
+
+\begin{document}
+  %Header
+  \begin{tcolorbox}[colback=Blue, arc=0.0pt, boxrule=0.0pt, top=3em, bottom=0em, oversize=\paperwidth, left=3em, right=3em]
+    \begin{tcolorbox}[colback=White, boxrule=0pt, arc=0pt, top=1em, bottom=1em, width=0.85\paperwidth, center]
+      \begin{tcolorbox}[sharp corners, colframe=Black, colback=White, boxrule=2pt, arc=0pt, top=1em]
+        \begin{minipage}[c][5em][c]{1\linewidth}
+          % \begin{center}
+            \center\color{Black}{\sffamily\Huge\textbf{GALIH WICAKSONO}}\\
+            \center\color{Black}{\rule{7em}{2pt}}{\hspace{3em}}{\large\textbf{Front-End Web Developer}}{\hspace{3em}}{\rule{7em}{2pt}}
+          % \end{center}
+        \end{minipage}
+      \end{tcolorbox}
+    \end{tcolorbox}
+    \begin{center}\color{White}
+      \infoitem{github}{\dunderline[-2.6pt]{1.2pt}{\color{White}\href{https://github.com/galihwicaksono90}{galihwicaksono90\textsuperscript{\faIcon{link}}}}}
+      % \infoitem{github}{gorillahobo}
+      \infoitem{whatsapp}{0821-3546-2168}
+      \infoitem{phone}{0899-5045-687}
+      % \infoitem{globe}{\dunderline[-2.6pt]{1.2pt}{\color{White}\href{https://www.galihwicaksono.xyz}{galihwicaksono.xyz\textsuperscript{\faIcon{link}}}}}
+      \infoitem{at}{galihwicaksono90\\@gmail.com}
+      \infoitem{map}{\centering{Wonosobo,\\Indonesia}}
+    \end{center}
+  \end{tcolorbox}
+
+  % About
+  \sect{About}{I am front-end web developer. Building projects for businesses to grow. Technology is my passion and learning something new is what I seek in life.
+  }
+
+  %Skills and Eductations
+  \begin{multicols}{2}
+    \sect{Skills}{
+     \begin{tabular}[t]{ll}
+       % \huge{\faIcon{react}} & \skills{{/ 5}} \\
+       \def\svgwidth{0.07\columnwidth}\input{gatsby.pdf_tex} & \skills{{/4}} \\
+       \huge{\faIcon{js}} & \skills{{/4}} \\
+       \def\svgwidth{0.09\columnwidth}\input{nextjs.pdf_tex} & \skills{{/5}} \\
+       \def\svgwidth{0.07\columnwidth}\input{ts.pdf_tex} & \skills{{/4}} \\
+       % \def\svgwidth{0.07\columnwidth}\input{wololo.pdf_tex} & \skills{{/3}} \\
+       % \includesvg[inkscape]{nextjs.svg}
+       % \huge{\faIcon{python}} & \skills{{/2}} \\
+       % \def\svgwidth{0.09\columnwidth}\input{sass.pdf_tex} & \skills{{/4}} \\
+     \end{tabular}
+    }
+    \columnbreak
+    \sect{Experience}{
+      \sectitem{PT. Minda Perdana Indonesia }{\emph{Front-end developer}\\2021 - 2022}
+      \sectitem{Freelancing}{\emph{Front-end developer}\\2022 - present}
+      % \sectitem{SMA 1 Wonosobo}{2005}
+    }
+
+  \end{multicols}
+
+  % Projects
+  \sect{Projects}{
+    \begin{multicols}{2}
+      \link{https://pedantic-fermat-1ba180.netlify.app/}{Personal Website}{
+        A personal website made using Gatsby and Org-Mode. Styled using emotionjs
+      }
+      \link{https://learning-hub.id}{Learning Hub}{
+        E-Learning platform
+      }
+      \link{https://dev.ikataupn.or.id}{IKATA UPN}{
+        Ikatan Alumni Tambang portal website
+      }
+      \columnbreak
+      % \link{https://github.com/GorillaHobo/pneumatic-press}{Automatic Pnumatic Press}{
+      %   This is a pneumatic press controller for automatic plastic cup sealing machine. The main function is to control a solid state relay which in turn controls a pneumatic solenoid valve in a set duration.
+      % }
+    \end{multicols}
+  }
+
+  \begin{multicols}{2}
+    \sect{Other Skills}{
+        % \huge{{\fontfamily{Computer Modern}\selectfont\LaTeX} | \faIcon{linux} | \def\svgwidth{1.1em}\input{arduino.pdf_tex} | \def\svgwidth{1.0em}\input{emacs.pdf_tex}}
+      \begin{center}
+        \vspace*{-15pt}
+        \logo{\Large{{\fontfamily{Computer Modern}\selectfont\LaTeX}}}\hspace{10pt}
+        % \logo{\vspace{5pt}\def\svgwidth{2em}\input{emacs.pdf_tex}}
+        \logo{\vspace{5pt}\def\svgwidth{2.3em}\input{arduino.pdf_tex}}
+        \logo{\vspace{5pt}\def\svgwidth{2em}\input{ai.pdf_tex}}
+        \logo{\huge\faIcon{linux}}
+      \end{center}
+    }
+    \columnbreak
+    \sect{Interests}{
+      \begin{center}
+        Electronics | Hiking | Music
+      \end{center}
+  }
+
+  \end{multicols}
+\end{document}
+% Local Variables:
+% TeX-engine: xetex
+% End:
