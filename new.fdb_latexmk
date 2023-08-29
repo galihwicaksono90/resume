@@ -1,0 +1,17 @@
+# Fdb version 4
+["xdvipdfmx"] 0 "new.xdv" "new.pdf" "new" 0 -1
+  "new.xdv" 1683101588 376 fe684003a9ba9118d22d7d598fc4e916 "xelatex"
+  (generated)
+  "new.pdf"
+  (rewritten before read)
+["xelatex"] 1683101662 "new.tex" "new.xdv" "new" 1683101663 2
+  "/usr/share/texmf-dist/web2c/texmf.cnf" 1680514707 39911 2da6c67557ec033436fe5418a70a8a61 ""
+  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1680572004 11046057 2347225706592cb19510eebfbd4ca8f1 ""
+  "new.aux" 1683101587 32 3985256e7290058c681f74d7a3565a19 "xelatex"
+  "new.tex" 1683101661 1379 41b5ea4bc4268d8c1b3eecbe91a990f4 ""
+  "setup/packages.tex" 0 -1 0 ""
+  (generated)
+  "new.aux"
+  "new.log"
+  "new.xdv"
+  (rewritten before read)
